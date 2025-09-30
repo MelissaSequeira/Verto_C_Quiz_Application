@@ -1,10 +1,7 @@
 // db.js
 const sqlite3 = require("sqlite3").verbose();
 
-// Use persistent database file instead of in-memory
 const db = new sqlite3.Database("quiz.db");
-
-// Create table + insert sample data only if empty
 db.serialize(() => {
   db.run(`
     CREATE TABLE IF NOT EXISTS questions (
@@ -31,7 +28,7 @@ db.serialize(() => {
       "3",
       "4",
       "5",
-      2 // correctOption index (0-based or 1-based, depending on your logic)
+      2
     );
 
     stmt.run(

@@ -1,16 +1,15 @@
 // server.js
 const express = require("express");
 const cors = require("cors");
-const db = require("./db"); // Import database setup
+const db = require("./db"); 
 
 const app = express();
 const PORT = 5000;
 
 // Middleware
-app.use(cors()); // Allow frontend to connect
-app.use(express.json()); // Parse JSON bodies
+app.use(cors()); 
+app.use(express.json()); 
 
-// ✅ Route 1: Get all quiz questions (without correct answers)
 app.get("/quiz", (req, res) => {
   db.all("SELECT id, text, option1,option2, option3, option4 FROM questions", [], (err, rows) => {
     if (err) {
@@ -21,7 +20,7 @@ app.get("/quiz", (req, res) => {
   });
 });
 
-// ✅ Route 2: Submit answers and calculate score
+
 app.post("/submit", (req, res) => {
   const userAnswers = req.body; 
 
