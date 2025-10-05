@@ -117,6 +117,8 @@ npm test
 Verto-project/
 ├── Backend/
 │   ├── db.js              # Database configuration and sample data
+│   ├── scoring.js          # scoring logic
+│   ├── scoring.test.js     # Write test cases
 │   ├── server.js          # Express server and API routes
 │   ├── quiz.db           # SQLite database file
 │   └── package.json      # Backend dependencies
